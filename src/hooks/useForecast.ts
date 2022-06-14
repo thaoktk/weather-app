@@ -1,6 +1,5 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { debounce } from "lodash";
 
 const BASE_URL =
   "https://api.openweathermap.org/data/2.5/forecast?appid=4b0d7648a4da70e2a141e7aa512b54af&cnt=5&units=metric";
