@@ -47,8 +47,8 @@ function LeftBar({ forecast }: LeftBarInterface) {
             {forecast.list[2].main.temp.toFixed()}
           </span>
           <RiCelsiusLine
-            style={{ fill: "url(#text-gradient)" }}
-            className="text-3xl"
+            // style={{ fill: "url(#text-gradient)" }}
+            className="text-3xl text-white"
           />
         </div>
         <div className="text-3xl text-white text-center mt-3">
