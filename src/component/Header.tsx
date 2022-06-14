@@ -21,7 +21,7 @@ function Header({
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLocationSearch(e.target.value);
-    if (e.target.value === "" || !e.target.value) {
+    if (e.target.value === "" || !e.target.value || e.target.value.trim() === "") {
       setIsError(false);
       setLocationSearch("");
       setForecast(undefined);
