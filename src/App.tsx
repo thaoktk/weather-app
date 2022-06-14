@@ -19,10 +19,6 @@ function App() {
     submitRequest(value);
   };
 
-  const delayToAppear = () => {
-    
-  }
-
   return (
     <div className={` ${themeDark === true ? `dark` : ``}`}>
       <div className="dark:bg-primary bg-second min-h-screen min-w-full flex justify-center items-center transition-theme">
