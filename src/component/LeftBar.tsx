@@ -22,7 +22,7 @@ function LeftBar({ curWeather, forecast }: LeftBarInterface) {
   } else {
     img_src = background_day;
   }
-  
+
   return (
     <div className="rounded-lg relative w-full lg:flex-1 flex-[2_2_0%] appear">
       <div className="w-full h-full">
@@ -56,10 +56,7 @@ function LeftBar({ curWeather, forecast }: LeftBarInterface) {
           <span className="text-3xl text-white font-bold">
             {curWeather.main.temp.toFixed()}
           </span>
-          <RiCelsiusLine
-            // style={{ fill: "url(#text-gradient)" }}
-            className="text-3xl text-white"
-          />
+          <RiCelsiusLine className="text-3xl text-white" />
         </div>
         <div className="text-3xl text-white text-center mt-3">
           {detailWeather.description.charAt(0).toUpperCase() +

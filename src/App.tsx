@@ -15,7 +15,7 @@ function App() {
     submitRequest,
     setIsError,
     setForecast,
-    setCurrentWeather,
+    setCurrentWeather
   } = useForecast();
 
   const handleClickThemeButton = () => {

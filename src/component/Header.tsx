@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { BiSearch, BiSun, BiMoon } from "react-icons/bi";
 import { Forecast, CurrentWeatherInDay } from "../hooks/useForecast";
 
@@ -42,8 +42,6 @@ function Header({
     }
   };
 
-  const inputField = React.useRef() as React.MutableRefObject<HTMLInputElement>;
-
   const handleKeyPressInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.which === 13) {
       handleClickButtonSubmit();
@@ -58,7 +56,6 @@ function Header({
         <div className="w-full flex justify-center items-center">
           <div className="md:w-1/2 w-full">
             <input
-              ref={inputField}
               value={locationSearch}
               onChange={handleChangeInput}
               onKeyDown={handleKeyPressInput}
@@ -69,7 +66,7 @@ function Header({
           </div>
           <button
             onClick={handleClickButtonSubmit}
-            className="ml-5 p-3 flex items-center justify-center rounded-full border-2 dark:border-white border-slate-800 transition-theme"
+            className="ml-5 p-3 flex items-center justify-center rounded-full border-2 dark:border-white border-slate-600 transition-theme"
           >
             <svg width="0" height="0">
               <linearGradient
