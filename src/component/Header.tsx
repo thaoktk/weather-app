@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BiSearch, BiSun, BiMoon } from "react-icons/bi";
-import { Forecast } from "../hooks/useForecast";
+import { Forecast, CurrentWeatherInDay } from "../hooks/useForecast";
 
 interface HeaderInterface {
   theme: boolean;
@@ -8,6 +8,7 @@ interface HeaderInterface {
   getValueSearch: (value: string) => void;
   setIsError: (value: boolean) => void;
   setForecast: (value: Forecast | undefined) => void;
+  setCurrentWeather: (value: CurrentWeatherInDay | undefined) => void;
 }
 
 function Header({
@@ -16,15 +17,21 @@ function Header({
   getValueSearch,
   setIsError,
   setForecast,
+  setCurrentWeather,
 }: HeaderInterface) {
   const [locationSearch, setLocationSearch] = useState<string>("");
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLocationSearch(e.target.value);
-    if (e.target.value === "" || !e.target.value || e.target.value.trim() === "") {
+    if (
+      e.target.value === "" ||
+      !e.target.value ||
+      e.target.value.trim() === ""
+    ) {
       setIsError(false);
       setLocationSearch("");
       setForecast(undefined);
+      setCurrentWeather(undefined);
       return;
     }
   };

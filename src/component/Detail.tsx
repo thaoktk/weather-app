@@ -1,11 +1,11 @@
 import { RiCelsiusLine } from "react-icons/ri";
-import { Forecast } from "../hooks/useForecast";
+import { CurrentWeatherInDay } from "../hooks/useForecast";
 
 interface DetailInterface {
-  forecast: Forecast;
+  curWeather: CurrentWeatherInDay;
 }
 
-function Detail({ forecast }: DetailInterface) {
+function Detail({ curWeather }: DetailInterface) {
   return (
     <div className="">
       <div className="flex justify-between items-center appear">
@@ -13,7 +13,7 @@ function Detail({ forecast }: DetailInterface) {
           Cloudiness
         </span>
         <span className="text-2xl dark:text-white text-slate-800 transition-theme">
-          {forecast.list[2].clouds.all + "%"}
+          {curWeather.clouds.all + "%"}
         </span>
       </div>
       <div className="flex justify-between items-center mt-5">
@@ -21,7 +21,7 @@ function Detail({ forecast }: DetailInterface) {
           Humidity
         </span>
         <span className="text-2xl dark:text-white text-slate-800 transition-theme">
-          {forecast.list[2].main.humidity + "%"}
+          {curWeather.main.humidity + "%"}
         </span>
       </div>
       <div className="flex justify-between items-center mt-5">
@@ -29,7 +29,7 @@ function Detail({ forecast }: DetailInterface) {
           Wind
         </span>
         <span className="text-2xl dark:text-white text-slate-800 transition-theme">
-          {forecast.list[2].wind.speed + "m/s"}
+          {curWeather.wind.speed + "m/s"}
         </span>
       </div>
       <div className="flex justify-between items-center mt-5">
@@ -37,7 +37,7 @@ function Detail({ forecast }: DetailInterface) {
           Feels like
         </span>
         <span className="text-2xl dark:text-white text-slate-800 transition-theme flex items-center">
-          {forecast.list[2].main.feels_like.toFixed()}
+          {curWeather.main.feels_like.toFixed()}
           <RiCelsiusLine className="text-2xl dark:text-white text-slate-800 transition-theme" />
         </span>
       </div>
@@ -46,7 +46,7 @@ function Detail({ forecast }: DetailInterface) {
           Max temp
         </span>
         <span className="text-2xl dark:text-white text-slate-800 transition-theme flex items-center">
-          {forecast.list[2].main.temp_max.toFixed()}
+          {curWeather.main.temp_max.toFixed()}
           <RiCelsiusLine className="text-2xl dark:text-white text-slate-800 transition-theme" />
         </span>
       </div>
@@ -55,7 +55,7 @@ function Detail({ forecast }: DetailInterface) {
           Min temp
         </span>
         <span className="text-2xl dark:text-white text-slate-800 transition-theme flex items-center">
-          {forecast.list[2].main.temp_min.toFixed()}
+          {curWeather.main.temp_min.toFixed()}
           <RiCelsiusLine className="text-2xl dark:text-white text-slate-800 transition-theme" />
         </span>
       </div>

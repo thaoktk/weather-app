@@ -8,8 +8,15 @@ import useForecast from "./hooks/useForecast";
 
 function App() {
   const [themeDark, setThemeDark] = useState<boolean>(true);
-  const { isError, forecast, submitRequest, setIsError, setForecast } =
-    useForecast();
+  const {
+    isError,
+    forecast,
+    currentWeather,
+    submitRequest,
+    setIsError,
+    setForecast,
+    setCurrentWeather,
+  } = useForecast();
 
   const handleClickThemeButton = () => {
     setThemeDark(!themeDark);
@@ -29,17 +36,18 @@ function App() {
             getValueSearch={getValueSearch}
             setIsError={setIsError}
             setForecast={setForecast}
+            setCurrentWeather={setCurrentWeather}
           />
           {isError && (
             <div className="mt-10 flex justify-center items-center w-full appear">
               <Error />
             </div>
           )}
-          {forecast && (
+          {forecast && currentWeather && (
             <div className="mt-10 flex lg:flex-row flex-col justify-center gap-10 w-full">
-              <LeftBar forecast={forecast} />
+              <LeftBar forecast={forecast} curWeather={currentWeather} />
               <div className="flex-[2_2_0%] mt-3">
-                <Detail forecast={forecast} />
+                <Detail curWeather={currentWeather} />
                 <WeatherInDay forecast={forecast} />
               </div>
             </div>

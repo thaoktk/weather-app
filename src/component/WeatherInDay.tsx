@@ -22,7 +22,7 @@ function WeatherInDay({ forecast }: WeatherInDayInterface) {
                 <img src={urlIcon + item.weather[0].icon + `@2x.png`} alt="" />
               </div>
               <div className="mt-3 text-2xl font-semibold dark:text-white text-slate-800 text-center transition-theme">
-                {moment(item.dt_txt).format("HH:MM")}
+                {moment(item.dt_txt).format("LT")}
               </div>
               <div className="mt-3 flex items-center justify-center text-2xl dark:text-white text-slate-800 transition-theme">
                 {item.main.temp.toFixed()}

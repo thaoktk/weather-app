@@ -1,17 +1,18 @@
 import { IoLocationOutline } from "react-icons/io5";
 import { RiCelsiusLine } from "react-icons/ri";
 import background from "../image/image-bg.png";
-import { Forecast } from "../hooks/useForecast";
+import { CurrentWeatherInDay, Forecast } from "../hooks/useForecast";
 import moment from "moment";
 
 interface LeftBarInterface {
+  curWeather: CurrentWeatherInDay;
   forecast: Forecast;
 }
 
 const urlIcon = "http://openweathermap.org/img/wn/";
 
-function LeftBar({ forecast }: LeftBarInterface) {
-  const detailWeather = forecast.list[2].weather[0];
+function LeftBar({ curWeather, forecast }: LeftBarInterface) {
+  const detailWeather = curWeather.weather[0];
 
   return (
     <div className="rounded-lg relative w-full lg:flex-1 flex-[2_2_0%] appear">
@@ -44,7 +45,7 @@ function LeftBar({ forecast }: LeftBarInterface) {
         </div>
         <div className="mt-8 flex justify-center items-center">
           <span className="text-3xl text-white font-bold">
-            {forecast.list[2].main.temp.toFixed()}
+            {curWeather.main.temp.toFixed()}
           </span>
           <RiCelsiusLine
             // style={{ fill: "url(#text-gradient)" }}
