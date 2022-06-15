@@ -1,1 +1,1 @@
-Enter a location and get the result of weather forecast
+Enter a location and get the result of weather forecast.
