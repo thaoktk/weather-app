@@ -1,6 +1,7 @@
 import { IoLocationOutline } from "react-icons/io5";
 import { RiCelsiusLine } from "react-icons/ri";
-import background from "../image/image-bg.png";
+import background_day from "../image/image-bg.png";
+import background_night from "../image/night-sea.jpg";
 import { CurrentWeatherInDay, Forecast } from "../hooks/useForecast";
 import moment from "moment";
 
@@ -14,11 +15,19 @@ const urlIcon = "http://openweathermap.org/img/wn/";
 function LeftBar({ curWeather, forecast }: LeftBarInterface) {
   const detailWeather = curWeather.weather[0];
 
+  const hour = parseInt(moment(new Date().getTime()).format("HH"));
+  let img_src = undefined;
+  if (hour >= 17 || hour <= 5) {
+    img_src = background_night;
+  } else {
+    img_src = background_day;
+  }
+  
   return (
     <div className="rounded-lg relative w-full lg:flex-1 flex-[2_2_0%] appear">
       <div className="w-full h-full">
         <img
-          src={background}
+          src={img_src}
           alt=""
           className="w-full h-full rounded-lg shadow-xl"
         />
