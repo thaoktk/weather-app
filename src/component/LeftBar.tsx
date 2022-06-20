@@ -2,7 +2,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { RiCelsiusLine } from "react-icons/ri";
 import background_day from "../image/image-bg.png";
 import background_night from "../image/night-sea.jpg";
-import { CurrentWeatherInDay, Forecast } from "../hooks/useForecast";
+import { CurrentWeatherInDay, Forecast } from "../context/useForecast";
 import moment from "moment";
 
 interface LeftBarInterface {

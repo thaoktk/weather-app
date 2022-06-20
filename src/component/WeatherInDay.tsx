@@ -1,5 +1,5 @@
 import { RiCelsiusLine } from "react-icons/ri";
-import { Forecast } from "../hooks/useForecast";
+import { Forecast } from "../context/useForecast";
 import moment from "moment";
 
 const urlIcon = "http://openweathermap.org/img/wn/";

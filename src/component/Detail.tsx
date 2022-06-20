@@ -1,5 +1,5 @@
 import { RiCelsiusLine } from "react-icons/ri";
-import { CurrentWeatherInDay } from "../hooks/useForecast";
+import { CurrentWeatherInDay } from "../context/useForecast";
 
 interface DetailInterface {
   curWeather: CurrentWeatherInDay;

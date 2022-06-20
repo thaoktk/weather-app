@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { BiSearch, BiSun, BiMoon } from "react-icons/bi";
-import { Forecast, CurrentWeatherInDay } from "../hooks/useForecast";
+import { Forecast, CurrentWeatherInDay } from "../context/useForecast";
 
 interface HeaderInterface {
   theme: boolean;

@@ -4,7 +4,7 @@ import Error from "./component/Error";
 import Header from "./component/Header";
 import LeftBar from "./component/LeftBar";
 import WeatherInDay from "./component/WeatherInDay";
-import useForecast from "./hooks/useForecast";
+import useForecast from "./context/useForecast";
 
 function App() {
   const [themeDark, setThemeDark] = useState<boolean>(true);
