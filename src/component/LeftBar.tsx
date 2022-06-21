@@ -49,7 +49,7 @@ function LeftBar({ curWeather, forecast }: LeftBarInterface) {
           <img
             src={urlIcon + detailWeather.icon + `@4x.png`}
             alt=""
-            className="w-[200px] h-[200px]"
+            className="md:w-[200px] md:h-[200px] w-[180px] h-[180px]"
           />
         </div>
         <div className="md:mt-8 mt-5 flex justify-center items-center">
