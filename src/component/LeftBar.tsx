@@ -32,7 +32,7 @@ function LeftBar({ curWeather, forecast }: LeftBarInterface) {
           className="w-full h-full rounded-lg shadow-xl"
         />
       </div>
-      <div className="absolute top-0 left-0 w-full py-10">
+      <div className="absolute top-0 left-0 w-full md:py-10 py-8">
         <div className="text-4xl text-white font-bold text-center">
           {moment(forecast.list[2].dt_txt).format("dddd")}
         </div>
@@ -45,14 +45,14 @@ function LeftBar({ curWeather, forecast }: LeftBarInterface) {
             {forecast.city.name + ", " + forecast.city.country}
           </span>
         </div>
-        <div className="flex justify-center lg:mt-16 mt-10">
+        <div className="flex justify-center lg:mt-16 mt-5">
           <img
             src={urlIcon + detailWeather.icon + `@4x.png`}
             alt=""
             className="w-[200px] h-[200px]"
           />
         </div>
-        <div className="mt-8 flex justify-center items-center">
+        <div className="md:mt-8 mt-5 flex justify-center items-center">
           <span className="text-3xl text-white font-bold">
             {curWeather.main.temp.toFixed()}
           </span>
