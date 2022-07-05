@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { BiSearch, BiSun, BiMoon } from "react-icons/bi";
 import { Forecast, CurrentWeatherInDay } from "../context/useForecast";
 
@@ -11,9 +11,11 @@ interface HeaderInterface {
   setCurrentWeather: (value: CurrentWeatherInDay | undefined) => void;
 }
 
+const placeholderValueArray = ["London", "Hanoi", "Bienhoa", "Saigon"];
+
 function Header({
-  changeTheme,
   theme,
+  changeTheme,
   getValueSearch,
   setIsError,
   setForecast,
@@ -47,6 +49,7 @@ function Header({
       handleClickButtonSubmit();
     }
   };
+
   return (
     <div>
       <div className="text-center">
@@ -60,7 +63,7 @@ function Header({
               onChange={handleChangeInput}
               onKeyDown={handleKeyPressInput}
               type="text"
-              placeholder="Search a location"
+              placeholder="Hanoi ..."
               className="px-5 py-3 w-full bg-transparent border-2 dark:border-slate-300 border-slate-600 rounded-2xl outline-none dark:text-white text-slate-800 text-xl transition-theme"
             />
           </div>
