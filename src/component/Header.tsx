@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { BiSearch, BiSun, BiMoon } from "react-icons/bi";
 import { Forecast, CurrentWeatherInDay } from "../context/useForecast";
 
@@ -10,8 +10,6 @@ interface HeaderInterface {
   setForecast: (value: Forecast | undefined) => void;
   setCurrentWeather: (value: CurrentWeatherInDay | undefined) => void;
 }
-
-const placeholderValueArray = ["London", "Hanoi", "Bienhoa", "Saigon"];
 
 function Header({
   theme,
